@@ -1,0 +1,21 @@
+<template name="MasterLayout">
+
+  <core-scaffold>
+
+    <core-header-panel navigation flex>
+      <core-toolbar id="navheader">
+        <span>Menu</span>
+      </core-toolbar>
+      <core-menu>
+        <core-item label="One"></core-item>
+        <core-item label="Two"></core-item>
+      </core-menu>
+    </core-header-panel>
+    
+    <span tool>Title</span>
+
+    <div class="content">
+      {{> yield}}
+    </div>
+  </core-scaffold>
+</template>
