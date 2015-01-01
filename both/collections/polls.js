@@ -37,6 +37,10 @@ PollsSchema = new SimpleSchema({
           this.unset();
         }
       }
+    },
+    "options.$.votes": {
+      type: Number,
+      defaultValue: 0
     }
 });
 
