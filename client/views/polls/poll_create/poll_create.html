@@ -5,8 +5,17 @@
       <input is="core-input" name="question">
     </paper-input-decorator>
 
+    {{>OptionItem}}
+    {{>OptionItem}}
+    {{>OptionItem}}
+
     <paper-button raised role="button" name="submit">Create poll</paper-button>
   </form>
 
+</template>
 
+<template name="OptionItem">
+  <paper-input-decorator label="Option" floatingLabel="true">
+    <input is="core-input" name="option">
+  </paper-input-decorator>
 </template>
