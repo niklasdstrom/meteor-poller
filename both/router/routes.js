@@ -12,3 +12,4 @@ Router.configure({
  *  Router.route('/', {name: 'home'});
 */
 Router.route('/', {name: 'poll.create'});
+Router.route('/polls/:_id', {name: 'poll.show'});

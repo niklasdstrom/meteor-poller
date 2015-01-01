@@ -13,6 +13,7 @@ Template.PollCreate.events({
     Meteor.call('/polls/create', poll, function(err, result){
       if(!err){
         // success;
+        Router.go('/polls/'+result);
       }
     });
   }
