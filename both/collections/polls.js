@@ -23,6 +23,20 @@ PollsSchema = new SimpleSchema({
     },
     "options.$.title": {
       type: String
+    },
+    "options.$._id": {
+      type: String,
+        autoValue: function() {
+          //http://stackoverflow.com/questions/1349404/generate-a-string-of-5-random-characters-in-javascript
+          var id = Math.random().toString(36).substring(7);
+          if (this.isInsert) {
+            return id;
+          } else if (this.isUpsert) {
+            return {$setOnInsert: id};
+          } else {
+            this.unset();
+          }
+        }
     }
 });
 
