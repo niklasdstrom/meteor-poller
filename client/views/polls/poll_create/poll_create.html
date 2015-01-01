@@ -1,3 +1,12 @@
 <template name="PollCreate">
-  client/views/polls/poll_create/poll_create.html
+
+  <form>
+    <paper-input-decorator label="Question" floatingLabel="true">
+      <input is="core-input" name="question">
+    </paper-input-decorator>
+
+    <paper-button raised role="button" name="submit">Create poll</paper-button>
+  </form>
+
+
 </template>

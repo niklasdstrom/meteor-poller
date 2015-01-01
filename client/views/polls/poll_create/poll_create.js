@@ -2,12 +2,21 @@
 /* PollCreate: Event Handlers and Helpersss .js*/
 /*****************************************************************************/
 Template.PollCreate.events({
-  /*
-   * Example:
-   *  'click .selector': function (e, tmpl) {
-   *
-   *  }
-   */
+
+  'click [name="submit"]': function(e, t){
+    // submit. 
+    var poll = {
+      question: t.find('[name="question"]').value,
+      options: []
+    };
+
+    Meteor.call('/polls/create', poll, function(err, result){
+      if(!err){
+        // success;
+      }
+    });
+  }
+
 });
 
 Template.PollCreate.helpers({
