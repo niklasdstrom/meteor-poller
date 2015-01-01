@@ -1,5 +1,14 @@
 <template name="PollShow">
 
-<h2>{{question}}</h2>
+  <h2>{{question}}</h2>
+  
+  <form>
+    <paper-radio-group>
+      {{#each options}}
+        <paper-radio-button name="{{_id}}" label="{{title}}"></paper-radio-button><br />
+      {{/each}}
+    </paper-radio-group>
 
+    <p><paper-button raised name="submit">Vote</paper-button></p>
+  </form>
 </template>

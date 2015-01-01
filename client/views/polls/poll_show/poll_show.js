@@ -2,12 +2,17 @@
 /* PollShow: Event Handlers and Helpersss .js*/
 /*****************************************************************************/
 Template.PollShow.events({
-  /*
-   * Example:
-   *  'click .selector': function (e, tmpl) {
-   *
-   *  }
-   */
+   'click [name="submit"]': function(e, t){
+      var selectedId = t.find('paper-radio-group').selected;
+      var successUrl = '/polls/'+this._id+'/results'
+
+      Meteor.call('/polls/vote', this._id, selectedId, function(err, result){
+        if (!err){
+          // success
+          Router.go(successUrl);
+        }
+      });
+   }
 });
 
 Template.PollShow.helpers({
