@@ -10,6 +10,10 @@ Template.PollCreate.events({
       options: []
     };
 
+    _.each(t.findAll('[name="option"]'), function(option, i){
+      poll.options.push({title: option.value});
+    })
+
     Meteor.call('/polls/create', poll, function(err, result){
       if(!err){
         // success;
