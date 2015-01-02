@@ -2,8 +2,8 @@
   <h2>{{question}}</h2>
  
   <ul> 
-    {{#each options}}
-      <li>{{title}}</li>
+    {{#each sortedOptions}}
+      <li>{{title}} - {{votes}}</li>
     {{/each}}
   </ul>
 </template>

@@ -11,12 +11,12 @@ Template.PollResult.events({
 });
 
 Template.PollResult.helpers({
-  /*
-   * Example:
-   *  items: function () {
-   *    return Items.find();
-   *  }
-   */
+  sortedOptions: function(){
+    var options = this.options;
+    return _.sortBy(options, function(option){
+      return -option.votes;
+    });
+  }
 });
 
 /*****************************************************************************/
