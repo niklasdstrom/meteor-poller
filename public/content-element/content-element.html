@@ -1,26 +1,28 @@
-<link rel="import" href="../core-media-query/core-media-query.html">
+<link rel="import" href="../components/core-media-query/core-media-query.html">
 
 <polymer-element name="content-element" attributes="responsiveWidth width">
-<template>
-  <style>
-    .ccc
-    }
+  <template>
+    <style>
+      .card{
+        background-color: white;
+      }
+      .wide{
+         width:600px;
+         margin: 100px auto;
+      }
+    </style>
+    <div class="card {{ {wide: wide} | tokenList }}"> 
+      <content></content>
+    </div>
+    <core-media-query query="min-width: {{responsiveWidth}}" querymatches="{{wide}}"></core-media-query>
+  </template>
+  <script>
 
-    .ccc.wide{
-      widht: 600px;
-      margin-top: 120px;
-    }
-  </style>
-  <core-media-query query="min-width: {{responsiveWidth}}" queryMatches="{{wide}}"></core-media-query>
-  <div class="ccc {{ {wide: wide} }}">
-    <content></content>
-  </div>
-</template>
-<script>
+    Polymer('content-element', {
+      responsiveWidth: '900px',
 
-  Polymer('content-element', {
-    responsiveWidth: '900px'
-  });
+      
+    });
 
-</script>
+  </script>
 </polymer-element>

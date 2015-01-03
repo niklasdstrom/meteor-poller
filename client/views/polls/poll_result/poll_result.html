@@ -1,6 +1,8 @@
 <template name="PollResult">
-  <h2>{{question}}</h2>
- 
+  <core-toolbar>
+    <h2>{{question}}</h2>
+  </core-toolbar>
+  
   <ul> 
     {{#each sortedOptions}}
       <li>{{title}} - {{votes}}</li>

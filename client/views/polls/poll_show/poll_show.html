@@ -1,14 +1,18 @@
 <template name="PollShow">
+  <core-toolbar>
+    <h2>{{question}}</h2>
+  </core-toolbar>
 
-  <h2>{{question}}</h2>
+  <div class="poll-content">
+    <form>
+      <paper-radio-group>
+        {{#each options}}
+          <paper-radio-button name="{{_id}}" label="{{title}}"></paper-radio-button><br />
+        {{/each}}
+      </paper-radio-group>
+
+      <p><paper-button raised name="submit">Vote</paper-button></p>
+    </form>
+  </div>
   
-  <form>
-    <paper-radio-group>
-      {{#each options}}
-        <paper-radio-button name="{{_id}}" label="{{title}}"></paper-radio-button><br />
-      {{/each}}
-    </paper-radio-group>
-
-    <p><paper-button raised name="submit">Vote</paper-button></p>
-  </form>
 </template>
