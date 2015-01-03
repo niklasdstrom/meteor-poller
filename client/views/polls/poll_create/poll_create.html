@@ -1,15 +1,19 @@
 <template name="PollCreate">
 
   <form>
-    <paper-input-decorator label="Question" floatingLabel="true">
-      <input is="core-input" name="question">
-    </paper-input-decorator>
+    <core-toolbar>
+      <paper-input-decorator label="Question" floatingLabel="true">
+        <input is="core-input" name="question">
+      </paper-input-decorator>
+    </core-toolbar>
 
-    {{>OptionItem}}
-    {{>OptionItem}}
-    {{>OptionItem}}
+    <div class="poll-content">
+      {{>OptionItem}}
+      {{>OptionItem}}
+      {{>OptionItem}}
+      <paper-button raised role="button" name="submit">Create poll</paper-button>
+    </div>
 
-    <paper-button raised role="button" name="submit">Create poll</paper-button>
   </form>
 
 </template>
